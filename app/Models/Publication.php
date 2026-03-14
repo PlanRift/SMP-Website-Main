@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+use RalphJSmit\Laravel\SEO\Support\HasSEO;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
+
+class Publication extends Model
+{
+    use HasFactory;
+    use HasSEO;
+
+    public function getDynamicSEOData(): SEOData
+    {
+        return new SEOData(
+            title: $this->title,
+            description: \Illuminate\Support\Str::limit(strip_tags($this->description), 160),
+            image: !empty($this->gallery) ? \Illuminate\Support\Facades\Storage::url($this->gallery[0]) : null,
+        );
+    }
+    protected $fillable = [
+        'title',
+        'slug',
+        'description',
+        'document_file',
+        'gallery',
+    ];
+
+    protected $casts = [
+        'gallery' => 'array',
+    ];
+}
