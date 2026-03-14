@@ -1,5 +1,5 @@
 <!-- About Us Section -->
-<div class="flex flex-col items-start mb-8 w-full relative">
+<div class="flex flex-col px-6 md:px-8 xl:px-12 items-start mb-8 w-full relative">
     <div class="w-full relative z-10 flex flex-col md:flex-row gap-8 items-center mb-10">
         <div class="w-full md:w-[40%]">
             <h3 class="text-[#00A651] montserrat-400 text-3xl mb-0">

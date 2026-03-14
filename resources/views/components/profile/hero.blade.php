@@ -1,7 +1,7 @@
 <!-- Main Content Wrapper with top padding to account for fixed header -->
 <div class="w-full px-6 md:px-8 xl:px-12 pt-32 md:pt-40">
     <!-- Header/Hero Row -->
-    <div class="flex flex-col md:flex-row justify-between items-start">
+    <div class="flex flex-col md:flex-row justify-between items-start mb-5">
         <div class="max-w-[900px]">
             <h2 class="text-2xl font-bold montserrat-400 text-zinc-600 mb-[-10px] ms-[5px]">
                 SMP ISLAM TERPADU
@@ -31,7 +31,7 @@
     </div>
 
     <!-- Main Hero Image -->
-    <div class="w-full h-[400px] md:h-[1000px] rounded-[2rem] overflow-hidden mb-16 shadow-lg border-4 border-white">
+    <div class="w-full h-[500px] md:h-[1100px] rounded-4xl overflow-hidden mb-16">
         <img
             src="{{ asset('assets/frontPage.png') }}"
             alt="frontPage"
