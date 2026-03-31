@@ -9,7 +9,7 @@
             <!-- Brand Column -->
             <div class="space-y-6">
                 <div class="flex items-center gap-3">
-                    <img src="{{ asset('assets/mainLogo.png') }}" class="h-12 w-auto" alt="Logo">
+                    <img src="{{ asset('assets/Logo/smpSmall.png') }}" class="h-15 w-auto rounded-full" alt="Logo">
                     <div class="flex flex-col">
                         <span class="text-xl font-bold tracking-tight leading-none uppercase">INSAN TAQWA</span>
                         <span class="text-[10px] tracking-[0.2em] text-gray-400 uppercase">Islamic School</span>
@@ -28,7 +28,7 @@
                         @foreach($footerMenu->menuItems as $item)
                             <li>
                                 <a href="{{ $item->url }}" class="text-gray-400 hover:text-[#9ec869] transition duration-300 flex items-center gap-2 group">
-                                    <span class="w-2 h-[1px] bg-gray-600 group-hover:bg-[#9ec869] transition-all"></span>
+                                    <span class="w-2 h-px bg-gray-600 group-hover:bg-[#9ec869] transition-all"></span>
                                     {{ $item->title }}
                                 </a>
                             </li>

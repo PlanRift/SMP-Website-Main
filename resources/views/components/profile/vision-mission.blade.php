@@ -1,7 +1,7 @@
 <!-- Vision & Mission Section -->
 <div class="w-full px-6 md:px-8 xl:px-12 pb-20 mt-8">
     <!-- Big Top Image -->
-    <div class="w-full h-[350px] md:h-[450px] rounded-[2rem] overflow-hidden mb-12 shadow-lg">
+    <div class="w-full h-[700px] md:h-[900px] rounded-4xl overflow-hidden mb-12 shadow-lg">
         <img
             src="{{ asset('assets/Banner-School.jpg') }}"
             alt="Building"
@@ -10,25 +10,25 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
-        <!-- Left small image -->
-        <div class="rounded-3xl overflow-hidden h-64 md:h-[300px] shadow-md md:col-span-3">
+        <!-- Left main image -->
+        <!-- <div class="rounded-3xl overflow-hidden h-[1000px] shadow-md md:col-span-3">
             <img
                 src="{{ asset('assets/School-Close.jpg') }}"
                 class="w-full h-full object-cover object-center"
                 alt="Hands"
             />
-        </div>
+        </div> -->
 
         <!-- Vision -->
-        <div class="flex flex-col md:col-span-4">
-            <h3 class="text-2xl font-medium mb-4">Vision</h3>
-            <p class="text-sm text-gray-800 leading-relaxed mb-6 font-medium">
+        <div class="flex flex-col md:col-span-6">
+            <h3 class="text-[100px] font-medium mb-4 montserrat-700">VISION</h3>
+            <p class="text-2xl text-gray-800 leading-relaxed mb-6 font-medium">
                 We believe education should go beyond academics. Our
                 approach combines strong Islamic values with modern learning
                 methods to shape students who are not only smart but also
                 sincere, disciplined, and caring.
             </p>
-            <div class="rounded-2xl overflow-hidden h-32 mt-auto shadow-md hidden md:block">
+            <div class="rounded-2xl overflow-hidden h-full mt-auto shadow-md hidden md:block">
                 <img
                     src="{{ asset('assets/Masjid-Sky.jpg') }}"
                     class="w-full h-full object-cover"
@@ -38,9 +38,16 @@
         </div>
 
         <!-- Mission -->
-        <div class="flex flex-col md:col-span-5">
-            <h3 class="text-2xl font-medium mb-4">Mission</h3>
-            <p class="text-sm text-gray-800 leading-relaxed font-medium">
+        <div class="flex flex-col md:col-span-6">
+            <div class="rounded-2xl overflow-hidden h-full mt-auto shadow-md hidden md:block">
+                <img
+                    src="{{ asset('assets/Masjid-Sky.jpg') }}"
+                    class="w-full h-full object-cover"
+                    alt="Vision Tree"
+                />
+            </div>
+            <h3 class="text-[100px] font-medium mb-4 montserrat-700">MISSION</h3>
+            <p class="text-2xl text-gray-800 leading-relaxed font-medium">
                 We believe education should go beyond academics. Our
                 approach combines strong Islamic values with modern learning
                 methods to shape students who are not only smart but also
