@@ -1,15 +1,15 @@
 <!-- Main Content Wrapper with top padding to account for fixed header -->
-<div class="w-full px-6 md:px-8 xl:px-12 pt-32 md:pt-40">
+<div class="w-full px-6 md:px-12 lg:px-24 pt-32 md:pt-40">
     <!-- Header/Hero Row -->
-    <div class="flex flex-col md:flex-row justify-between items-start mb-5">
+    <div class="flex flex-col md:flex-row justify-between items-start mb-16">
         <div class="max-w-[900px]">
-            <h2 class="text-2xl font-bold montserrat-400 text-zinc-600 mb-[-10px] ms-[5px]">
+            <h3 class="text-[#00A651] uppercase tracking-[0.2em] font-medium text-xs md:text-sm mb-1">
                 SMP ISLAM TERPADU
-            </h2>
-            <h1 class="text-9xl md:text-[100px] text-[#00A651] mb-2 md:mb-4 tracking-tight montserrat-700 leading-none">
+            </h3>
+            <h1 class="text-4xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.9] tracking-tight mb-16 montserrat-800 text-[#00A651]">
                 INSAN TAQWA
             </h1>
-            <p class="text-1xl md:text-1xl text-gray-700 leading-tight mb-2 font-medium pr-4 mt-2 montserrat-500 text-justify">
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-medium text-justify montserrat-500 max-w-2xl">
                 A place where
                 <span class="montserrat-800">faith, knowledge, and character grow together.</span>
                 With a balance of academic excellence and Islamic values, we nurture

@@ -1,14 +1,14 @@
 <!-- About Us Section -->
-<div class="flex flex-col px-6 md:px-8 xl:px-12 items-start mb-8 w-full relative">
-    <div class="w-full relative z-10 flex flex-col md:flex-row gap-8 items-center mb-10">
-        <div class="w-full md:w-[40%]">
-            <h3 class="text-[#00A651] montserrat-400 text-3xl mb-0">
+<div class="flex flex-col px-6 md:px-12 lg:px-24 py-16 md:py-24 items-start w-full relative">
+    <div class="w-full relative z-10 flex flex-col md:flex-row gap-12 lg:gap-20 items-center mb-16">
+        <div class="w-full md:w-1/2">
+            <h3 class="text-[#00A651] uppercase tracking-[0.2em] font-medium text-xs md:text-sm mb-1">
                 About Us
             </h3>
-            <h2 class="text-3xl md:text-[70px] mb-6 tracking-tight uppercase montserrat-700">
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tight mb-16 montserrat-800">
                 SELAMAT DATANG
             </h2>
-            <p class="text-gray-700 leading-tight text-1xl md:text-2xl w-full text-justify">
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-medium text-justify">
                 We believe education should go beyond academics. Our
                 approach combines strong Islamic values with modern
                 learning methods to shape students who are not only
@@ -22,8 +22,8 @@
                 impact in their community.
             </p>
         </div>
-        <div class="w-full md:w-[60%] relative">
-            <div class="rounded-2xl overflow-hidden h-[350px] md:h-[650px] shadow-lg w-[80%] ms-auto relative z-10">
+        <div class="w-full md:w-1/2 relative">
+            <div class="rounded-2xl overflow-hidden h-[350px] md:h-[650px] shadow-2xl relative z-10">
                 <img
                     src="{{ asset('assets/Masjid-Sky.jpg') }}"
                     class="w-full h-full object-cover object-center"
@@ -34,7 +34,7 @@
     </div>
 
     <!-- 3 Images Carousel -->
-    <div class="relative w-full mb-20 z-10 px-0 md:px-12">
+    <div class="relative w-full mb-20 z-10 px-0">
         <!-- Carousel Container -->
         <div class="overflow-hidden w-full h-[350px] rounded-2xl">
             <div
@@ -52,7 +52,7 @@
                 @endphp
 
                 @foreach ($carouselImages as $image)
-                    <div class="min-w-[100%] md:min-w-[calc(33.333333%-1rem)] h-full shrink-0 relative rounded-2xl overflow-hidden shadow-md group">
+                    <div class="min-w-full md:min-w-[calc(33.333333%-1rem)] h-full shrink-0 relative rounded-2xl overflow-hidden shadow-md group">
                         <img
                             src="{{ asset($image['src']) }}"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
