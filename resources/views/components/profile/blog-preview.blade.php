@@ -19,72 +19,91 @@
                 class="flex gap-6 transition-transform duration-500 ease-in-out cursor-default w-max"
             >
                 @php
-                    $blogs = [
-                        [
-                            'title' => 'Menanamkan Karakter Qurani di Era Digital',
-                            'date' => '24 Maret 2024',
-                            'desc' => 'Bagaimana SMPIT Insan Taqwa mendidik generasi yang tetap teguh pada nilai-nilai keislaman di tengah gempuran teknologi modern.',
-                            'img' => 'assets/School-Close.jpg'
-                        ],
-                        [
-                            'title' => 'Serunya Field Trip ke Museum Sejarah',
-                            'date' => '15 Maret 2024',
-                            'desc' => 'Para siswa diajak untuk lebih mengenal sejarah peradaban Islam melalui kunjungan lapangan yang interaktif dan edukatif.',
-                            'img' => 'assets/Saung-Gor.jpg'
-                        ],
-                        [
-                            'title' => 'Tips Belajar Efektif Menjelang Ujian Akhir',
-                            'date' => '10 Maret 2024',
-                            'desc' => 'Dukungan penuh tim pengajar dalam membantu siswa mencapai hasil akademis terbaik dengan metode belajar yang menyenangkan.',
-                            'img' => 'assets/Masjid-Sky.jpg'
-                        ],
-                        [
-                            'title' => 'Prestasi Gemilang Siswa di OSN 2024',
-                            'date' => '05 Maret 2024',
-                            'desc' => 'Bangga! Siswa SMPIT Insan Taqwa berhasil membawa pulang medali emas dalam Olimpiade Sains Nasional tingkat daerah.',
-                            'img' => 'assets/Kantin.jpg'
-                        ],
-                        [
-                            'title' => 'Ekstrakurikuler Memanah: Melatih Fokus & Kesabaran',
-                            'date' => '01 Maret 2024',
-                            'desc' => 'Siswa mendalami seni memanah sebagai bagian dari sunnah dan pengembangan disiplin diri yang kuat.',
-                            'img' => 'assets/Banner-School.jpg'
-                        ],
-                        [
-                            'title' => 'Wawancara Eksklusif dengan Kepala Sekolah',
-                            'date' => '25 Februari 2024',
-                            'desc' => 'Visi besar SMPIT Insan Taqwa dalam mencetak generasi pemimpin masa depan yang berakhlak mulia.',
-                            'img' => 'assets/School-Close.jpg'
-                        ],
-                        [
-                            'title' => 'Kegiatan Ramadhan di Lingkungan SMPIT',
-                            'date' => '20 Februari 2024',
-                            'desc' => 'Berbagai kegiatan positif mulai dari kajian hingga bakti sosial untuk mempererat ukhuwah selama bulan suci.',
-                            'img' => 'assets/Masjid-Sky.jpg'
-                        ],
-                    ];
+                    $activities = \App\Models\Activity::latest('date')->take(10)->get();
+                    
+                    // Fallback to original mock data if no activities exist in DB
+                    $usingMock = $activities->isEmpty();
+                    
+                    if ($usingMock) {
+                        $blogs = [
+                            [
+                                'title' => 'Menanamkan Karakter Qurani di Era Digital',
+                                'date' => '24 Maret 2024',
+                                'desc' => 'Bagaimana SMPIT Insan Taqwa mendidik generasi yang tetap teguh pada nilai-nilai keislaman di tengah gempuran teknologi modern.',
+                                'img' => 'assets/School-Close.jpg',
+                                'is_mock' => true
+                            ],
+                            [
+                                'title' => 'Serunya Field Trip ke Museum Sejarah',
+                                'date' => '15 Maret 2024',
+                                'desc' => 'Para siswa diajak untuk lebih mengenal sejarah peradaban Islam melalui kunjungan lapangan yang interaktif dan edukatif.',
+                                'img' => 'assets/Saung-Gor.jpg',
+                                'is_mock' => true
+                            ],
+                            [
+                                'title' => 'Tips Belajar Efektif Menjelang Ujian Akhir',
+                                'date' => '10 Maret 2024',
+                                'desc' => 'Dukungan penuh tim pengajar dalam membantu siswa mencapai hasil akademis terbaik dengan metode belajar yang menyenangkan.',
+                                'img' => 'assets/Masjid-Sky.jpg',
+                                'is_mock' => true
+                            ],
+                            [
+                                'title' => 'Prestasi Gemilang Siswa di OSN 2024',
+                                'date' => '05 Maret 2024',
+                                'desc' => 'Bangga! Siswa SMPIT Insan Taqwa berhasil membawa pulang medali emas dalam Olimpiade Sains Nasional tingkat daerah.',
+                                'img' => 'assets/Kantin.jpg',
+                                'is_mock' => true
+                            ],
+                        ];
+                    }
                 @endphp
 
-                @foreach ($blogs as $blog)
-                    <div class="blog-slide shrink-0 w-[85vw] md:w-[350px] lg:w-[450px] group flex flex-col h-full">
-                        <div class="rounded-3xl overflow-hidden h-[300px] lg:h-[400px] mb-6 shadow-md bg-gray-100 relative">
-                            <img
-                                src="{{ asset($blog['img']) }}"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out"
-                                alt="{{ $blog['title'] }}"
-                            />
+                @if (!$usingMock)
+                    @foreach ($activities as $activity)
+                        <div class="blog-slide shrink-0 w-[85vw] md:w-[350px] lg:w-[450px] group flex flex-col h-full">
+                            <div class="rounded-3xl overflow-hidden h-[300px] lg:h-[400px] mb-6 shadow-md bg-gray-100 relative">
+                                <img
+                                    src="{{ !empty($activity->gallery) ? \Illuminate\Support\Facades\Storage::url($activity->gallery[0]) : asset('assets/School-Close.jpg') }}"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out"
+                                    alt="{{ $activity->title }}"
+                                />
+                            </div>
+                            <h4 class="text-2xl md:text-3xl font-bold mb-3 leading-tight montserrat-800 text-gray-900 group-hover:text-[#00A651] transition-colors">
+                                {{ $activity->title }}
+                            </h4>
+                            <p class="text-lg text-gray-600 leading-snug font-medium text-left pr-4 mb-6">
+                                {{ \Illuminate\Support\Str::limit(strip_tags($activity->content), 150) }}
+                            </p>
+                            <div class="mt-auto text-sm font-bold text-[#00A651] uppercase tracking-wider">
+                                {{ $activity->date?->translatedFormat('d F Y') ?? $activity->created_at->translatedFormat('d F Y') }}
+                            </div>
                         </div>
-                        <h4 class="text-2xl md:text-3xl font-bold mb-3 leading-tight montserrat-800 text-gray-900 group-hover:text-[#00A651] transition-colors">
-                            {{ $blog['title'] }}
-                        </h4>
-                        <p class="text-lg text-gray-600 leading-snug font-medium text-left pr-4 mb-6">
-                            {{ $blog['desc'] }}
-                        </p>
-                        <div class="mt-auto text-sm font-bold text-[#00A651] uppercase tracking-wider">
-                            {{ $blog['date'] }}
+                    @endforeach
+                @else
+                    @foreach ($blogs as $blog)
+                        <div class="blog-slide shrink-0 w-[85vw] md:w-[350px] lg:w-[450px] group flex flex-col h-full">
+                            <div class="rounded-3xl overflow-hidden h-[300px] lg:h-[400px] mb-6 shadow-md bg-gray-100 relative">
+                                <img
+                                    src="{{ asset($blog['img']) }}"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out"
+                                    alt="{{ $blog['title'] }}"
+                                />
+                                <div class="absolute top-4 right-4 bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">
+                                    Sample
+                                </div>
+                            </div>
+                            <h4 class="text-2xl md:text-3xl font-bold mb-3 leading-tight montserrat-800 text-gray-900 group-hover:text-[#00A651] transition-colors">
+                                {{ $blog['title'] }}
+                            </h4>
+                            <p class="text-lg text-gray-600 leading-snug font-medium text-left pr-4 mb-6">
+                                {{ $blog['desc'] }}
+                            </p>
+                            <div class="mt-auto text-sm font-bold text-[#00A651] uppercase tracking-wider">
+                                {{ $blog['date'] }}
+                            </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                @endif
             </div>
         </div>
 
