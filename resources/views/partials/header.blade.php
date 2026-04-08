@@ -1,5 +1,5 @@
 @php
-    $headerMenu = \Datlechin\FilamentMenuBuilder\Models\Menu::location('header');
+    $headerMenu = \Biostate\FilamentMenuBuilder\Models\Menu::where('slug', 'header')->first();
     $settings = \App\Models\Setting::first();
 @endphp
 <nav class="bg-base-100/80 backdrop-blur-md sticky top-0 z-50 border-b border-base-200">
@@ -21,15 +21,15 @@
             {{-- Desktop Menu --}}
             <div class="hidden md:flex items-center space-x-4">
                 @if($headerMenu)
-                    @foreach($headerMenu->menuItems as $item)
+                    @foreach($headerMenu->items as $item)
                         <div class="relative group">
-                            <a href="{{ $item->url }}" 
+                            <a href="{{ $item->link }}" 
                                target="{{ $item->target }}"
-                               class="{{ $item->classes }} text-base-content/70 hover:text-primary font-medium px-3 py-2 rounded-md transition-colors {{ $item->isActive() ? 'text-primary font-semibold' : '' }}">
+                               class="{{ $item->link_class }} text-base-content/70 hover:text-primary font-medium px-3 py-2 rounded-md transition-colors">
                                 @if($item->icon)
                                     <x-icon name="{{ $item->icon }}" class="w-4 h-4 inline-block mr-1" />
                                 @endif
-                                {{ $item->resolveLocale($item->title) }}
+                                {{ $item->name }}
                                 @if($item->children->isNotEmpty())
                                     <svg class="w-4 h-4 inline-block ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 @endif
@@ -40,10 +40,10 @@
                                 <div class="absolute left-0 mt-2 w-48 bg-base-100 border border-base-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                     <div class="py-1">
                                         @foreach($item->children as $child)
-                                            <a href="{{ $child->url }}" 
+                                            <a href="{{ $child->link }}" 
                                                target="{{ $child->target }}"
                                                class="block px-4 py-2 text-sm text-base-content/80 hover:bg-base-200 hover:text-primary {{ $child->classes }}">
-                                                {{ $child->resolveLocale($child->title) }}
+                                                {{ $child->name }}
                                             </a>
                                         @endforeach
                                     </div>

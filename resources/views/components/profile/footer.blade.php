@@ -1,5 +1,5 @@
 @php
-    $footerMenu = \Datlechin\FilamentMenuBuilder\Models\Menu::location('footer');
+    $footerMenu = \Biostate\FilamentMenuBuilder\Models\Menu::where('slug', 'footer')->first();
     $settings = \App\Models\Setting::first();
 @endphp
 
@@ -24,12 +24,12 @@
             <div>
                 <h4 class="text-lg font-bold mb-8 uppercase tracking-wider text-[#9ec869]">Quick Links</h4>
                 <ul class="space-y-4">
-                    @if($footerMenu && $footerMenu->menuItems->count() > 0)
-                        @foreach($footerMenu->menuItems as $item)
+                    @if($footerMenu && $footerMenu->items->count() > 0)
+                        @foreach($footerMenu->items as $item)
                             <li>
-                                <a href="{{ $item->url }}" class="text-gray-400 hover:text-[#9ec869] transition duration-300 flex items-center gap-2 group">
+                                <a href="{{ $item->link }}" class="text-gray-400 hover:text-[#9ec869] transition duration-300 flex items-center gap-2 group">
                                     <span class="w-2 h-px bg-gray-600 group-hover:bg-[#9ec869] transition-all"></span>
-                                    {{ $item->title }}
+                                    {{ $item->name }}
                                 </a>
                             </li>
                         @endforeach

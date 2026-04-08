@@ -1,5 +1,5 @@
 @php
-    $footerMenu = \Datlechin\FilamentMenuBuilder\Models\Menu::location('footer');
+    $footerMenu = \Biostate\FilamentMenuBuilder\Models\Menu::where('slug', 'footer')->first();
     $settings = \App\Models\Setting::first();
 @endphp
 <footer class="bg-neutral text-neutral-content pt-16 pb-8">
@@ -16,12 +16,12 @@
                 <h3 class="text-sm font-semibold tracking-wider text-neutral-content/90 uppercase mb-4">Quick Links</h3>
                 <ul class="space-y-3">
                     @if($footerMenu)
-                        @foreach($footerMenu->menuItems as $item)
+                        @foreach($footerMenu->items as $item)
                             <li>
-                                <a href="{{ $item->url }}" 
+                                <a href="{{ $item->link }}" 
                                    target="{{ $item->target }}" 
-                                   class="{{ $item->classes }} text-neutral-content/70 hover:text-neutral-content transition-colors">
-                                    {{ $item->resolveLocale($item->title) }}
+                                   class="{{ $item->link_class }} text-neutral-content/70 hover:text-neutral-content transition-colors">
+                                    {{ $item->name }}
                                 </a>
                             </li>
                         @endforeach

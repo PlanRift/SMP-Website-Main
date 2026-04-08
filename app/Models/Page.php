@@ -4,17 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Datlechin\FilamentMenuBuilder\Contracts\MenuPanelable;
-use Datlechin\FilamentMenuBuilder\Concerns\HasMenuPanel;
 
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
-class Page extends Model implements MenuPanelable
+class Page extends Model
 {
-    use HasFactory, HasMenuPanel, HasSEO;
+    use HasFactory, HasSEO;
 
     public function getDynamicSEOData(): SEOData
     {
@@ -33,18 +31,13 @@ class Page extends Model implements MenuPanelable
         'content' => 'array',
     ];
 
-    public function getMenuPanelTitleColumn(): string
+    public function getMenuNameAttribute(): string
     {
-        return 'title';
+        return $this->title;
     }
-
-    public function getMenuPanelUrlUsing(): callable
+    
+    public function getMenuLinkAttribute(): string
     {
-        return fn (self $model) => route('page.show', $model->slug);
-    }
-
-    public function getMenuPanelName(): string
-    {
-        return 'Halaman Profil';
+        return route('page.show', $this->slug);
     }
 }

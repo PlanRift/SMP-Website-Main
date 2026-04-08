@@ -18,8 +18,7 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
-use Datlechin\FilamentMenuBuilder\MenuPanel\ModelMenuPanel;
+use Biostate\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -45,16 +44,6 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugin(
                 FilamentMenuBuilderPlugin::make()
-                    ->navigationGroup('Settings')
-                    ->navigationLabel('Menus')
-                    ->addLocations([
-                        'header' => 'Header',
-                        'footer' => 'Footer',
-                    ])
-                    ->addMenuPanels([
-                        ModelMenuPanel::make()
-                            ->model(\App\Models\Page::class)
-                    ])
             )
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([

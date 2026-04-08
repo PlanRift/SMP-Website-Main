@@ -27,6 +27,7 @@ class ActivityForm
                     ->reorderable()
                     ->image()
                     ->directory('activities')
+                    ->disk('public')
                     ->columnSpanFull(),
                 \Filament\Forms\Components\RichEditor::make('content')
                     ->columnSpanFull(),

@@ -1,13 +1,21 @@
 <!-- Blog Sneak Peek Section -->
 <div class="w-full py-16 md:py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden" id="blog-preview-container">
     <!-- Header -->
-    <div class="mb-16">
-        <h3 class="text-[#00A651] uppercase tracking-[0.2em] font-medium text-xs md:text-sm mb-1">
-            Blog Sneak Peek
-        </h3>
-        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tight mb-0 montserrat-800">
-            LATEST STORIES
-        </h2>
+    <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+            <h3 class="text-[#00A651] uppercase tracking-[0.2em] font-medium text-xs md:text-sm mb-1">
+                Blog Sneak Peek
+            </h3>
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tight mb-0 montserrat-800">
+                LATEST STORIES
+            </h2>
+        </div>
+        <a href="{{ route('activities.index') }}" class="group flex items-center gap-2 text-[#00A651] font-bold text-sm uppercase tracking-widest hover:translate-x-1 transition-transform duration-300 mb-1">
+            View More
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+        </a>
     </div>
 
     <!-- Carousel -->
