@@ -208,4 +208,56 @@ document.addEventListener("DOMContentLoaded", () => {
         
         updateMatCarousel();
     }
+
+    // Page Transition Logic
+    const overlay = document.getElementById("page-transition-overlay");
+    if (overlay) {
+        // 1. Initial Fade Out (Page Entry)
+        setTimeout(() => {
+            overlay.classList.add("opacity-0");
+            overlay.classList.remove("opacity-100");
+            setTimeout(() => {
+                overlay.classList.add("hidden");
+                overlay.classList.remove("pointer-events-auto");
+                overlay.classList.add("pointer-events-none");
+            }, 500);
+        }, 200);
+
+        // 2. Fade In on Navigation (Page Exit)
+        document.body.addEventListener("click", (e) => {
+            const link = e.target.closest("a");
+            if (!link) return;
+
+            const href = link.getAttribute("href");
+            const target = link.getAttribute("target");
+
+            // Only animate for internal links
+            const isInternal = href && (href.startsWith("/") || href.startsWith(window.location.origin)) && !href.includes("#");
+            const isPlainClick = !e.ctrlKey && !e.shiftKey && !e.metaKey && !e.altKey;
+
+            if (isInternal && isPlainClick && target !== "_blank") {
+                e.preventDefault();
+                
+                overlay.classList.remove("hidden", "pointer-events-none");
+                overlay.classList.add("pointer-events-auto");
+                
+                setTimeout(() => {
+                    overlay.classList.add("opacity-100");
+                    overlay.classList.remove("opacity-0");
+                }, 10);
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 500);
+            }
+        });
+
+        // 3. Handle Back Button (BFCache)
+        window.addEventListener("pageshow", (event) => {
+            if (event.persisted) {
+                overlay.classList.add("opacity-0", "hidden", "pointer-events-none");
+                overlay.classList.remove("opacity-100", "pointer-events-auto");
+            }
+        });
+    }
 });
