@@ -2,34 +2,25 @@ import './bootstrap';
 
 // Navbar Scroll Effect
 window.addEventListener("scroll", () => {
-    const logoContainer = document.getElementById("logo-container");
-    const mainLogo = document.getElementById("main-logo");
-    const navDivider = document.getElementById("nav-divider");
+    const nav = document.getElementById("main-nav");
+    const header = document.getElementById("desktop-header");
+    const logo = document.getElementById("main-logo");
+    const btn = document.getElementById("register-btn");
 
-    if (!logoContainer || !mainLogo || !navDivider) return;
+    if (!nav || !header || !logo || !btn) return;
 
-    if (window.scrollY > 50) {
-        // Scrolled down: navbar mode
-        logoContainer.classList.replace("pt-6", "pt-2");
-        logoContainer.classList.replace("md:pt-8", "md:pt-2");
-        logoContainer.classList.replace("pb-4", "pb-2");
-
-        mainLogo.classList.replace("mb-4", "mb-0");
-
-        // Add shadow and hide the wide divider
-        logoContainer.classList.add("shadow-md");
-        navDivider.classList.add("opacity-0");
+    if (window.scrollY > 20) {
+        // Shrink state
+        header.classList.replace("h-24", "h-16");
+        logo.classList.replace("h-16", "h-10");
+        btn.classList.replace("h-24", "h-16");
+        nav.classList.add("shadow-md");
     } else {
-        // At top: original large logo mode
-        logoContainer.classList.replace("pt-2", "pt-6");
-        logoContainer.classList.replace("md:pt-2", "md:pt-8");
-        logoContainer.classList.replace("pb-2", "pb-4");
-
-        mainLogo.classList.replace("mb-0", "mb-4");
-
-        // Remove shadow and restore divider
-        logoContainer.classList.remove("shadow-md");
-        navDivider.classList.remove("opacity-0");
+        // Expanded state
+        header.classList.replace("h-16", "h-24");
+        logo.classList.replace("h-10", "h-16");
+        btn.classList.replace("h-16", "h-24");
+        nav.classList.remove("shadow-md");
     }
 });
 

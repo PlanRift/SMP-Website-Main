@@ -3,7 +3,7 @@
 @section('title', 'Activities & Events')
 
 @section('content')
-<div class="w-full pt-44 pb-24">
+<div class="w-full pt-16 pb-24">
     <!-- Header -->
     <div class="mb-20 text-center px-6 md:px-8 lg:px-12">
         <h3 class="text-[#00A651] uppercase tracking-[0.2em] font-bold text-xs md:text-sm mb-2">

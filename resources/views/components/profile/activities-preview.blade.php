@@ -4,10 +4,10 @@
     <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
             <h3 class="text-[#00A651] uppercase tracking-[0.2em] font-medium text-xs md:text-sm mb-1">
-                Blog Sneak Peek
+                Sneak Peek of our Activities
             </h3>
             <h2 class="text-3xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tight mb-0 montserrat-800">
-                LATEST STORIES
+                LATEST ACTIVITIES 
             </h2>
         </div>
         <a href="{{ route('activities.index') }}" class="group flex items-center gap-2 text-[#00A651] font-bold text-sm uppercase tracking-widest hover:translate-x-1 transition-transform duration-300 mb-1">
