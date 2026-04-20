@@ -4,21 +4,23 @@
 <nav id="main-nav" class="bg-white sticky top-0 z-50 border-b border-gray-100 transition-all duration-300 ease-in-out">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Desktop Menu --}}
-        <div id="desktop-header" class="hidden lg:flex items-center justify-center h-24 transition-all duration-300 ease-in-out">
-            <div class="flex items-center gap-12">
-                {{-- Left Links --}}
-                <div class="flex items-center gap-10">
-                    <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-600 font-semibold transition-colors montserrat-600">Home</a>
-                    <a href="/about-us" class="text-gray-700 hover:text-green-600 font-semibold transition-colors montserrat-600">About Us</a>
-                </div>
+        <div id="desktop-header" class="hidden lg:flex items-center justify-between h-24 transition-all duration-300 ease-in-out">
+            {{-- Left Links --}}
+            <div class="flex-1 flex items-center justify-start gap-10">
+                <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-600 font-semibold transition-colors montserrat-600">Home</a>
+                <a href="/about-us" class="text-gray-700 hover:text-green-600 font-semibold transition-colors montserrat-600">About Us</a>
+            </div>
 
-                {{-- Logo --}}
-                <a href="{{ route('home') }}" class="shrink-0 mx-4 transition-all duration-300 ease-in-out">
+            {{-- Logo --}}
+            <div class="flex justify-center shrink-0">
+                <a href="{{ route('home') }}" class="transition-all duration-300 ease-in-out">
                     <img id="main-logo" src="{{ asset('assets/Logo/smpSmall.png') }}" alt="Logo" class="h-16 w-auto transition-all duration-300 ease-in-out">
                 </a>
+            </div>
 
-                {{-- Right Links --}}
-                <div class="flex items-center gap-10">
+            {{-- Right Links --}}
+            <div class="flex-1 flex items-center justify-end h-full">
+                <div class="flex items-center gap-10 h-full">
                     <a href="{{ route('activities.index') }}" class="text-gray-700 hover:text-green-600 font-semibold transition-colors montserrat-600">Blogs</a>
                     <a href="#" id="register-btn" class="bg-[#16A34A] text-white px-8 h-24 flex items-center justify-center font-bold transition-all duration-300 hover:bg-green-700 montserrat-700">
                         Daftar Sekarang
