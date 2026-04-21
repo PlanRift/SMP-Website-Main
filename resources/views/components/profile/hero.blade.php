@@ -1,5 +1,5 @@
 <!-- Main Content Wrapper with top padding to account for fixed header -->
-<div class="w-full px-6 md:px-12 lg:px-24 pt-32 md:pt-40">
+<div class="w-full px-6 md:px-12 lg:px-24 pt-12 md:pt-12">
     <!-- Header/Hero Row -->
     <div class="flex flex-col md:flex-row justify-between items-start mb-16">
         <div class="max-w-[900px]">

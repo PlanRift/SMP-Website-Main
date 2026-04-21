@@ -1,5 +1,5 @@
 <!-- Vision & Mission Section -->
-<div class="w-full px-6 md:px-12 lg:px-24 py-16 md:py-32 bg-white">
+<div class="w-full px-6 md:px-12 lg:px-24 py-12 md:py-24 pt-0 bg-white">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
         
         <!-- Left Column: Tall Image -->

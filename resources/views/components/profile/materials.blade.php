@@ -1,11 +1,11 @@
 <!-- Main Materials Section -->
-<div class="w-full py-16 relative overflow-hidden flex flex-col md:block" id="materials-container">
+<div class="w-full py-24 relative overflow-hidden flex flex-col md:block" id="materials-container">
     <!-- Header -->
     <div
         id="materials-header"
         class="px-6 md:px-12 lg:px-24 md:absolute md:left-0 md:top-[45%] lg:top-1/2 md:-translate-y-1/2 z-20 transition-opacity duration-500 w-full md:w-[400px] lg:w-[500px] mb-16 md:mb-0 pointer-events-none"
     >
-        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tight mb-0 montserrat-800">
+        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tight mb-0 montserrat-800 text-gray-900">
             MAIN<br />MATERIALS
         </h2>
     </div>
@@ -30,8 +30,8 @@
             @endphp
 
             @foreach ($materials as $item)
-                <div class="materials-slide shrink-0 w-[85vw] md:w-[300px] lg:w-[500px] group flex flex-col h-full {{ $loop->last ? 'pr-6 md:pr-0' : '' }}">
-                    <div class="rounded-3xl overflow-hidden h-[400px] lg:h-[800px] mb-4 shadow-md bg-gray-100 relative">
+                <div class="materials-slide shrink-0 w-[85vw] md:w-[300px] lg:w-[450px] group flex flex-col h-full">
+                    <div class="rounded-3xl overflow-hidden h-[350px] lg:h-[550px] mb-4 shadow-md bg-gray-100 relative">
                         <img
                             src="{{ asset($item['img']) }}"
                             class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out"
@@ -39,12 +39,15 @@
                         />
                     </div>
                     <h4 class="text-4xl font-medium mb-1 montserrat-600">{{ $item['title'] }}</h4>
-                    <p class="text-lg md:text-xl text-gray-700 leading-snug font-medium text-left pr-4">
+                    <p class="text-lg md:text-xl text-gray-700 leading-snug font-normal text-left pr-4">
                         Parents, teachers, and students work together as one
                         family, creating a warm and encouraging atmosphere.
                     </p>
                 </div>
             @endforeach
+
+            <!-- Right side spacer so the last item doesn't "hug" the wall -->
+            <div class="shrink-0 w-6 md:w-6 lg:w-6 xl:w-6"></div>
         </div>
 
         <!-- Controls Overlay -->

@@ -5,7 +5,7 @@
             <h3 class="text-[#00A651] uppercase tracking-[0.2em] font-medium text-xs md:text-sm mb-1">
                 About Us
             </h3>
-            <h2 class="text-3xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tight mb-16 montserrat-800">
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tight mb-8 montserrat-800">
                 SELAMAT DATANG
             </h2>
             <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-medium text-justify">

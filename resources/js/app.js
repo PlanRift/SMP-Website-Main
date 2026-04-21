@@ -128,23 +128,26 @@ document.addEventListener("DOMContentLoaded", () => {
             return document.querySelectorAll(".materials-slide");
         }
 
-        function getMatItemsToShow() {
-            if (window.innerWidth >= 1280) return 3;
-            if (window.innerWidth >= 1024) return 2;
-            if (window.innerWidth >= 768) return 1.5;
-            return 1;
-        }
-
         function updateMatCarousel() {
             const slides = getMatSlides();
             if (slides.length === 0) return;
 
+            const gap = window.innerWidth >= 768 ? 24 : 16;
             const slideWidth = slides[0].offsetWidth;
-            const offset = matIndex * slideWidth;
+            const containerWidth = matTrack.parentElement.offsetWidth;
+            const trackWidth = matTrack.scrollWidth;
+
+            let offset = matIndex * (slideWidth + gap);
+            const maxOffset = Math.max(0, trackWidth - containerWidth);
+            
+            if (offset > maxOffset) {
+                offset = maxOffset;
+            }
 
             matTrack.style.transform = `translateX(-${offset}px)`;
 
-            if (matIndex > 0) {
+            // Prev Button & Header
+            if (offset > 0) {
                 matHeader.style.opacity = "0";
                 matPrev.classList.remove("opacity-0", "pointer-events-none");
                 matPrev.classList.add("opacity-100", "pointer-events-auto");
@@ -154,12 +157,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 matPrev.classList.remove("opacity-100", "pointer-events-auto");
             }
 
-            const itemsToShow = getMatItemsToShow();
-            const maxIndex = Math.max(
-                0,
-                slides.length - Math.floor(itemsToShow),
-            );
-            if (matIndex >= maxIndex) {
+            // Next Button
+            if (offset >= maxOffset - 5) {
                 matNext.classList.add("opacity-0", "pointer-events-none");
                 matNext.classList.remove("opacity-100", "pointer-events-auto");
             } else {
@@ -176,28 +175,26 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         matNext.addEventListener("click", () => {
-            const maxIndex = Math.max(
-                0,
-                getMatSlides().length - Math.floor(getMatItemsToShow()),
-            );
-            if (matIndex < maxIndex) {
+            const slides = getMatSlides();
+            const gap = window.innerWidth >= 768 ? 24 : 16;
+            const slideWidth = slides[0].offsetWidth;
+            const containerWidth = matTrack.parentElement.offsetWidth;
+            const trackWidth = matTrack.scrollWidth;
+            
+            const currentOffset = matIndex * (slideWidth + gap);
+            const maxOffset = trackWidth - containerWidth;
+
+            if (currentOffset < maxOffset - 5) {
                 matIndex++;
                 updateMatCarousel();
             }
         });
 
         window.addEventListener("resize", () => {
-            const maxIndex = Math.max(
-                0,
-                getMatSlides().length - Math.floor(getMatItemsToShow()),
-            );
-            if (matIndex > maxIndex) {
-                matIndex = maxIndex;
-            }
             updateMatCarousel();
         });
         
-        updateMatCarousel();
+        setTimeout(updateMatCarousel, 100);
     }
 
     // Page Transition Logic
