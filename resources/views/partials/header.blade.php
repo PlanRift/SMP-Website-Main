@@ -8,7 +8,7 @@
             {{-- Left Links --}}
             <div class="flex-1 flex items-center justify-start gap-10">
                 <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-600 font-semibold transition-colors montserrat-600">Home</a>
-                <a href="/about-us" class="text-gray-700 hover:text-green-600 font-semibold transition-colors montserrat-600">About Us</a>
+                <a href="{{ route('home') }}#about-us" class="text-gray-700 hover:text-green-600 font-semibold transition-colors montserrat-600">About Us</a>
             </div>
 
             {{-- Logo --}}

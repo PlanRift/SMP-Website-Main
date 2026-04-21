@@ -1,5 +1,5 @@
 <!-- About Us Section -->
-<div class="flex flex-col px-6 md:px-12 lg:px-24 py-16 md:py-24 items-start w-full relative">
+<div id="about-us" class="flex flex-col px-6 md:px-12 lg:px-24 py-16 md:py-24 items-start w-full relative">
     <div class="w-full relative z-10 flex flex-col md:flex-row gap-12 lg:gap-20 items-center mb-16">
         <div class="w-full md:w-1/2">
             <h3 class="text-[#00A651] uppercase tracking-[0.2em] font-medium text-xs md:text-sm mb-1">

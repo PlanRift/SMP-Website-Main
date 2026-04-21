@@ -116,6 +116,4 @@
         {{ $activities->links() }}
     </div>
 </div>
-
-<x-profile.footer />
 @endsection

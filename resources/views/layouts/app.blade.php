@@ -19,6 +19,7 @@
         @yield('content')
     </main>
 
+    <x-profile.contact-section />
     @include('partials.footer')
 
 </body>

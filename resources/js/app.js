@@ -219,24 +219,33 @@ document.addEventListener("DOMContentLoaded", () => {
             const href = link.getAttribute("href");
             const target = link.getAttribute("target");
 
-            // Only animate for internal links
-            const isInternal = href && (href.startsWith("/") || href.startsWith(window.location.origin)) && !href.includes("#");
-            const isPlainClick = !e.ctrlKey && !e.shiftKey && !e.metaKey && !e.altKey;
+            // Only animate for internal links, except for same-page anchors
+            try {
+                const currentUrl = new URL(window.location.href);
+                const targetUrl = href ? new URL(href, window.location.origin) : null;
+                const isInternal = targetUrl && targetUrl.origin === window.location.origin;
+                const isSamePageAnchor = isInternal && 
+                                       targetUrl.pathname === currentUrl.pathname && 
+                                       targetUrl.hash !== "";
+                const isPlainClick = !e.ctrlKey && !e.shiftKey && !e.metaKey && !e.altKey;
 
-            if (isInternal && isPlainClick && target !== "_blank") {
-                e.preventDefault();
-                
-                overlay.classList.remove("hidden", "pointer-events-none");
-                overlay.classList.add("pointer-events-auto");
-                
-                setTimeout(() => {
-                    overlay.classList.add("opacity-100");
-                    overlay.classList.remove("opacity-0");
-                }, 10);
+                if (isInternal && !isSamePageAnchor && isPlainClick && target !== "_blank") {
+                    e.preventDefault();
+                    
+                    overlay.classList.remove("hidden", "pointer-events-none");
+                    overlay.classList.add("pointer-events-auto");
+                    
+                    setTimeout(() => {
+                        overlay.classList.add("opacity-100");
+                        overlay.classList.remove("opacity-0");
+                    }, 10);
 
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 500);
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500);
+                }
+            } catch (err) {
+                // Fallback for relative paths or invalid URLs if any
             }
         });
 

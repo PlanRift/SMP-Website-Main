@@ -7,5 +7,4 @@
     <x-profile.materials />
     <x-profile.vision-mission />
     <x-profile.activities-preview />
-    <x-profile.footer />
 @endsection

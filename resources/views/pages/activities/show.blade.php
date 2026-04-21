@@ -61,8 +61,6 @@
     </article>
 </div>
 
-<x-profile.footer />
-
 <style>
     .prose p {
         margin-bottom: 2rem;

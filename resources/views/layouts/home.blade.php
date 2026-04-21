@@ -15,6 +15,9 @@
         @yield('content')
     </main>
 
+    <x-profile.contact-section />
+    <x-profile.footer />
+
     <!-- Page Transition Overlay -->
     <div id="page-transition-overlay" class="fixed inset-0 bg-white z-[9999] flex items-center justify-center transition-opacity duration-500 opacity-100 pointer-events-auto">
         <img src="{{ asset('assets/Logo/smpSmall.png') }}" class="h-16 md:h-24 w-auto animate-pulse" alt="Loading...">
