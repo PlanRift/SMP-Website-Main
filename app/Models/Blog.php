@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 
-class Activity extends Model
+class Blog extends Model
 {
     use HasFactory;
     use HasSEO;

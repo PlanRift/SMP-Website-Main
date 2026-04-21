@@ -66,8 +66,7 @@
                     </div>
                     <div class="grid flex-1 grid-cols-2 gap-6 md:grid-cols-4">
                         @foreach([
-                                ['label' => 'Posts', 'icon' => 'heroicon-o-newspaper', 'color' => 'text-blue-600 dark:text-blue-400'],
-                                ['label' => 'Activities', 'icon' => 'heroicon-o-camera', 'color' => 'text-emerald-600 dark:text-emerald-400'],
+                                ['label' => 'Blogs', 'icon' => 'heroicon-o-camera', 'color' => 'text-[#00A651] dark:text-[#00A651]'],
                                 ['label' => 'Publications', 'icon' => 'heroicon-o-document-check', 'color' => 'text-purple-600 dark:text-purple-400'],
                                 ['label' => 'Testimonials', 'icon' => 'heroicon-o-star', 'color' => 'text-amber-600 dark:text-amber-400'],
                             ] as $item)
@@ -97,11 +96,11 @@
                             <div class="mt-2 h-2 w-2 shrink-0 border border-indigo-500"></div>
                                
       
-                                                         <span class="leading-relaxed text-slate-600 dark:text-slate-300">Gunakan blok <strong class="font-bold text-indigo-600 dark:text-indigo-400">Recent Blogs</strong> untuk menampilkan post terbaru secara otomatis.</span>
+                                                         <span class="leading-relaxed text-slate-600 dark:text-slate-300">Gunakan tab <strong class="font-bold text-indigo-600 dark:text-indigo-400">Blogs</strong> untuk menampilkan post terbaru secara otomatis di halaman beranda.</span>
                         </li>
                         <li class="flex items-start gap-4 text-base">
             <div class="mt-2 h-2 w-2 shrink-0 border border-emerald-500"></div>
-                            <span class="leading-relaxed text-slate-600 dark:text-slate-300">Blok <strong class="font-bold text-emerald-600 dark:text-emerald-400">Activities</strong> sangat bagus untuk halaman galeri sekolah.</span>
+                            <span class="leading-relaxed text-slate-600 dark:text-slate-300">Blok <strong class="font-bold text-emerald-600 dark:text-emerald-400">Blogs</strong> sangat bagus untuk halaman galeri sekolah.</span>
                         </li>
                     </ul>
                 </div>

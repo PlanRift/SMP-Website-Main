@@ -36,7 +36,7 @@
                     @else
                         <li><a href="/" class="text-gray-400 hover:text-[#9ec869] transition duration-300">Home</a></li>
                         <li><a href="/about" class="text-gray-400 hover:text-[#9ec869] transition duration-300">About Us</a></li>
-                        <li><a href="/activities" class="text-gray-400 hover:text-[#9ec869] transition duration-300">Activities</a></li>
+                        <li><a href="/blogs" class="text-gray-400 hover:text-[#9ec869] transition duration-300">Blogs</a></li>
                         <li><a href="/registration" class="text-gray-400 hover:text-[#9ec869] transition duration-300">Registration</a></li>
                     @endif
                 </ul>

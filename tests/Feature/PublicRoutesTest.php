@@ -1,8 +1,6 @@
 <?php
 
-use App\Models\Activity;
-use App\Models\Page;
-use App\Models\Post;
+use App\Models\Blog;
 use App\Models\Publication;
 use Database\Seeders\DatabaseSeeder;
 
@@ -14,14 +12,12 @@ it('serves all public routes', function () {
     $urls = collect([
         '/',
         '/blogs',
-        '/activities',
         '/publications',
         '/testimonials',
     ]);
 
     $urls = $urls
-        ->merge(Post::pluck('slug')->map(fn (string $slug) => "/blogs/{$slug}"))
-        ->merge(Activity::pluck('slug')->map(fn (string $slug) => "/activities/{$slug}"))
+        ->merge(Blog::pluck('slug')->map(fn (string $slug) => "/blogs/{$slug}"))
         ->merge(Publication::pluck('slug')->map(fn (string $slug) => "/publications/{$slug}"))
         ->merge(Page::pluck('slug')->map(fn (string $slug) => "/{$slug}"));
 

@@ -43,11 +43,11 @@
             >
                 @php
                     $carouselImages = [
-                        ['src' => 'assets/School-Close.jpg', 'alt' => 'School Activity 1'],
-                        ['src' => 'assets/Saung-Gor.jpg', 'alt' => 'School Activity 2'],
-                        ['src' => 'assets/Masjid-Sky.jpg', 'alt' => 'School Activity 3'],
-                        ['src' => 'assets/Kantin.jpg', 'alt' => 'School Activity 4'],
-                        ['src' => 'assets/Banner-School.jpg', 'alt' => 'School Activity 5'],
+                        ['src' => 'assets/School-Close.jpg', 'alt' => 'School Scene 1'],
+                        ['src' => 'assets/Saung-Gor.jpg', 'alt' => 'School Scene 2'],
+                        ['src' => 'assets/Masjid-Sky.jpg', 'alt' => 'School Scene 3'],
+                        ['src' => 'assets/Kantin.jpg', 'alt' => 'School Scene 4'],
+                        ['src' => 'assets/Banner-School.jpg', 'alt' => 'School Scene 5'],
                     ];
                 @endphp
 

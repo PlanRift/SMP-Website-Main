@@ -6,5 +6,5 @@
     <x-profile.why-us />
     <x-profile.materials />
     <x-profile.vision-mission />
-    <x-profile.activities-preview />
+    <x-profile.blog-preview />
 @endsection

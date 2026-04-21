@@ -4,13 +4,13 @@
     <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
             <h3 class="text-[#00A651] uppercase tracking-[0.2em] font-medium text-xs md:text-sm mb-1">
-                Sneak Peek of our Activities
+                Sneak Peek of our Blogs
             </h3>
             <h2 class="text-3xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tight mb-0 montserrat-800">
-                LATEST ACTIVITIES 
+                LATEST BLOGS 
             </h2>
         </div>
-        <a href="{{ route('activities.index') }}" class="group flex items-center gap-2 text-[#00A651] font-bold text-sm uppercase tracking-widest hover:translate-x-1 transition-transform duration-300 mb-1">
+        <a href="{{ route('blogs.index') }}" class="group flex items-center gap-2 text-[#00A651] font-bold text-sm uppercase tracking-widest hover:translate-x-1 transition-transform duration-300 mb-1">
             View More
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -27,10 +27,10 @@
                 class="flex gap-6 transition-transform duration-500 ease-in-out cursor-default w-max"
             >
                 @php
-                    $activities = \App\Models\Activity::latest('date')->take(10)->get();
+                    $blogs_query = \App\Models\Blog::latest('date')->take(10)->get();
                     
-                    // Fallback to original mock data if no activities exist in DB
-                    $usingMock = $activities->isEmpty();
+                    // Fallback to original mock data if no blogs exist in DB
+                    $usingMock = $blogs_query->isEmpty();
                     
                     if ($usingMock) {
                         $blogs = [
@@ -67,24 +67,26 @@
                 @endphp
 
                 @if (!$usingMock)
-                    @foreach ($activities as $activity)
+                    @foreach ($blogs_query as $blog)
                         <div class="blog-slide shrink-0 w-[85vw] md:w-[350px] lg:w-[450px] group flex flex-col h-full">
-                            <div class="rounded-3xl overflow-hidden h-[300px] lg:h-[400px] mb-6 shadow-md bg-gray-100 relative">
-                                <img
-                                    src="{{ !empty($activity->gallery) ? \Illuminate\Support\Facades\Storage::url($activity->gallery[0]) : asset('assets/School-Close.jpg') }}"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out"
-                                    alt="{{ $activity->title }}"
-                                />
-                            </div>
-                            <h4 class="text-2xl md:text-3xl font-bold mb-3 leading-tight montserrat-800 text-gray-900 group-hover:text-[#00A651] transition-colors">
-                                {{ $activity->title }}
-                            </h4>
-                            <p class="text-lg text-gray-600 leading-snug font-medium text-left pr-4 mb-6">
-                                {{ \Illuminate\Support\Str::limit(strip_tags($activity->content), 150) }}
-                            </p>
-                            <div class="mt-auto text-sm font-bold text-[#00A651] uppercase tracking-wider">
-                                {{ $activity->date?->translatedFormat('d F Y') ?? $activity->created_at->translatedFormat('d F Y') }}
-                            </div>
+                            <a href="{{ route('blogs.show', $blog->slug) }}" class="block h-full flex flex-col">
+                                <div class="rounded-3xl overflow-hidden h-[300px] lg:h-[400px] mb-6 shadow-md bg-gray-100 relative">
+                                    <img
+                                        src="{{ !empty($blog->gallery) ? \Illuminate\Support\Facades\Storage::url($blog->gallery[0]) : asset('assets/School-Close.jpg') }}"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out"
+                                        alt="{{ $blog->title }}"
+                                    />
+                                </div>
+                                <h4 class="text-2xl md:text-3xl font-bold mb-3 leading-tight montserrat-800 text-gray-900 group-hover:text-[#00A651] transition-colors">
+                                    {{ $blog->title }}
+                                </h4>
+                                <p class="text-lg text-gray-600 leading-snug font-medium text-left pr-4 mb-6 line-clamp-3">
+                                    {{ \Illuminate\Support\Str::limit(strip_tags($blog->content), 150) }}
+                                </p>
+                                <div class="mt-auto text-sm font-bold text-[#00A651] uppercase tracking-wider">
+                                    {{ $blog->date?->translatedFormat('d F Y') ?? $blog->created_at->translatedFormat('d F Y') }}
+                                </div>
+                            </a>
                         </div>
                     @endforeach
                 @else

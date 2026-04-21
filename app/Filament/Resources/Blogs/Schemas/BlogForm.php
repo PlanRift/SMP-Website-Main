@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Filament\Resources\Activities\Schemas;
+namespace App\Filament\Resources\Blogs\Schemas;
 
 use Filament\Schemas\Schema;
 use Filament\Schemas\Components\Section;
 
-class ActivityForm
+class BlogForm
 {
     public static function configure(Schema $schema): Schema
     {
@@ -26,7 +26,7 @@ class ActivityForm
                     ->multiple()
                     ->reorderable()
                     ->image()
-                    ->directory('activities')
+                    ->directory('blogs')
                     ->disk('public')
                     ->columnSpanFull(),
                 \Filament\Forms\Components\RichEditor::make('content')

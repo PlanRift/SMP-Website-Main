@@ -27,7 +27,7 @@
                     <img
                         src="{{ asset('assets/School-Close.jpg') }}"
                         class="w-full h-full object-cover object-center"
-                        alt="Activity 1"
+                        alt="School Life 1"
                     />
                 </div>
             </div>
@@ -47,7 +47,7 @@
                     <img
                         src="{{ asset('assets/Saung-Gor.jpg') }}"
                         class="w-full h-full object-cover object-center"
-                        alt="Activity 2"
+                        alt="School Life 2"
                     />
                 </div>
                 <div class="bg-[#2a8b41] rounded-3xl p-6 md:p-8 flex flex-col justify-center shadow-lg min-h-[250px] lg:h-[320px]">
@@ -56,7 +56,7 @@
                     </h4>
                     <p class="text-lg md:text-xl text-white/95 leading-snug font-medium text-left">
                         We focus on building strong moral character through
-                        daily activities, mentoring, and a supportive environment.
+                        daily interactions, mentoring, and a supportive environment.
                     </p>
                 </div>
             </div>

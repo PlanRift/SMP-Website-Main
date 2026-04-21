@@ -21,7 +21,7 @@
             {{-- Right Links --}}
             <div class="flex-1 flex items-center justify-end h-full">
                 <div class="flex items-center gap-10 h-full">
-                    <a href="{{ route('activities.index') }}" class="text-gray-700 hover:text-green-600 font-semibold transition-colors montserrat-600">Blogs</a>
+                    <a href="{{ route('blogs.index') }}" class="text-gray-700 hover:text-green-600 font-semibold transition-colors montserrat-600">Blogs</a>
                     <a href="{{ route('pendaftaran') }}" id="register-btn" class="bg-[#16A34A] text-white px-8 h-24 flex items-center justify-center font-bold transition-all duration-300 hover:bg-green-700 montserrat-700">
                         Daftar Sekarang
                     </a>
