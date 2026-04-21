@@ -7,13 +7,13 @@
         <div id="desktop-header" class="hidden lg:flex items-center justify-between h-24 transition-all duration-300 ease-in-out">
             {{-- Left Links --}}
             <div class="flex-1 flex items-center justify-start gap-10">
-                <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-600 font-semibold transition-colors montserrat-600">Home</a>
+                <a href="{{ route('home') }}#page-top" class="text-gray-700 hover:text-green-600 font-semibold transition-colors montserrat-600">Home</a>
                 <a href="{{ route('home') }}#about-us" class="text-gray-700 hover:text-green-600 font-semibold transition-colors montserrat-600">About Us</a>
             </div>
 
             {{-- Logo --}}
             <div class="flex justify-center shrink-0">
-                <a href="{{ route('home') }}" class="transition-all duration-300 ease-in-out">
+                <a href="{{ route('home') }}#page-top" class="transition-all duration-300 ease-in-out">
                     <img id="main-logo" src="{{ asset('assets/Logo/smpSmall.png') }}" alt="Logo" class="h-16 w-auto transition-all duration-300 ease-in-out">
                 </a>
             </div>
@@ -22,7 +22,7 @@
             <div class="flex-1 flex items-center justify-end h-full">
                 <div class="flex items-center gap-10 h-full">
                     <a href="{{ route('activities.index') }}" class="text-gray-700 hover:text-green-600 font-semibold transition-colors montserrat-600">Blogs</a>
-                    <a href="#" id="register-btn" class="bg-[#16A34A] text-white px-8 h-24 flex items-center justify-center font-bold transition-all duration-300 hover:bg-green-700 montserrat-700">
+                    <a href="{{ route('pendaftaran') }}" id="register-btn" class="bg-[#16A34A] text-white px-8 h-24 flex items-center justify-center font-bold transition-all duration-300 hover:bg-green-700 montserrat-700">
                         Daftar Sekarang
                     </a>
                 </div>
@@ -31,12 +31,12 @@
 
         {{-- Mobile Menu --}}
         <div class="lg:hidden flex justify-between items-center h-16">
-            <a href="{{ route('home') }}" class="shrink-0">
+            <a href="{{ route('home') }}#page-top" class="shrink-0">
                 <img src="{{ asset('assets/Logo/smpSmall.png') }}" alt="Logo" class="h-10 w-auto">
             </a>
             
             <div class="flex items-center gap-4">
-                <a href="#" class="bg-[#16A34A] text-white px-4 py-2 rounded text-sm font-bold montserrat-700">
+                <a href="{{ route('pendaftaran') }}" class="bg-[#16A34A] text-white px-4 py-2 rounded text-sm font-bold montserrat-700">
                     Daftar
                 </a>
                 <button type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none" aria-label="toggle menu">

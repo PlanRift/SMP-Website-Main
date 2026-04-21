@@ -11,7 +11,11 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="antialiased bg-base-100 text-base-content selection:bg-primary selection:text-primary-content">
+<body id="page-top" class="antialiased bg-base-100 text-base-content selection:bg-primary selection:text-primary-content">
+    <!-- Page Transition Overlay -->
+    <div id="page-transition-overlay" class="fixed inset-0 bg-white z-[9999] flex items-center justify-center transition-opacity duration-500 opacity-100 pointer-events-auto">
+        <img src="{{ asset('assets/Logo/smpSmall.png') }}" class="h-16 md:h-24 w-auto" alt="Loading...">
+    </div>
 
     @include('partials.header')
 

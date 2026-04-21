@@ -18,9 +18,9 @@
             </p>
         </div>
         <div class="flex flex-col items-end gap-2 shrink-0 md:pt-2 w-full md:w-auto mt-auto md:mt-auto mb-2">
-            <button class="border-[3px] rounded-[10px] px-16 py-5 text-2xl font-bold tracking-wide hover:cursor-pointer hover:bg-green-700 hover:text-white transition uppercase self-end md:self-auto mb-2">
+            <a href="{{ route('pendaftaran') }}" class="border-[3px] rounded-[10px] px-16 py-5 text-2xl font-bold tracking-wide hover:cursor-pointer hover:bg-green-700 hover:text-white transition uppercase self-end md:self-auto mb-2">
                 DAFTAR
-            </button>
+            </a>
             <div class="flex items-center justify-end gap-2 font-bold text-3xl tracking-widest self-end md:self-auto uppercase montserrat-500">
                 <span class="text-gray-900">AKREDITASI</span>
                 <div class="w-12 h-12 rounded-full bg-[#00A651] text-white flex items-center justify-center font-bold text-3xl shadow-sm shadow-green-200 ps-0.5">

@@ -22,4 +22,8 @@ Route::get('/activities/{slug}', [ActivityController::class, 'show'])->name('act
 Route::get('/publications', [PublicationController::class, 'index'])->name('publications.index');
 Route::get('/publications/{slug}', [PublicationController::class, 'show'])->name('publications.show');
 
+Route::get('/pendaftaran', function () {
+    return view('pages.registration');
+})->name('pendaftaran');
+
 Route::get('/{slug}', [PageController::class, 'show'])->name('page.show');
