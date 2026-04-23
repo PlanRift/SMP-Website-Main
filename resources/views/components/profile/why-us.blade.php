@@ -12,8 +12,8 @@
 
         <div class="flex flex-col gap-4 md:gap-6">
             <!-- 1st Row: Card & Image -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
-                <div class="bg-[#9ec869] rounded-3xl p-6 md:p-8 flex flex-col justify-center shadow-lg md:col-span-5 lg:col-span-5 relative overflow-hidden min-h-[250px] lg:h-[300px]">
+            <div class="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-6">
+                <div class="bg-[#9ec869] rounded-3xl p-6 xl:p-8 flex flex-col justify-center shadow-lg xl:col-span-5 relative overflow-hidden min-h-[250px] xl:h-[300px]">
                     <h4 class="text-3xl md:text-4xl font-bold mb-3 leading-tight text-white z-10">
                         Balanced Islamic &<br />Academic Education
                     </h4>
@@ -23,7 +23,7 @@
                         disciplined, and God-conscious.
                     </p>
                 </div>
-                <div class="rounded-3xl overflow-hidden shadow-lg md:col-span-7 lg:col-span-7 h-[250px] md:h-auto lg:h-[300px]">
+                <div class="rounded-3xl overflow-hidden shadow-lg xl:col-span-7 h-[250px] xl:h-auto xl:h-[300px]">
                     <img
                         src="{{ asset('assets/School-Close.jpg') }}"
                         class="w-full h-full object-cover object-center"
@@ -33,8 +33,8 @@
             </div>
 
             <!-- 2nd Row: Card, Image, Card -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                <div class="bg-[#618451] rounded-3xl p-6 md:p-8 flex flex-col justify-center shadow-lg min-h-[250px] lg:h-[320px]">
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-12 xl:gap-6">
+                <div class="bg-[#618451] rounded-3xl p-6 xl:p-8 flex flex-col justify-center shadow-lg min-h-[250px] xl:h-[320px]">
                     <h4 class="text-3xl md:text-4xl font-bold mb-3 leading-tight text-white">
                         Supportive<br />Community
                     </h4>
@@ -43,14 +43,14 @@
                         family, creating a warm and encouraging atmosphere.
                     </p>
                 </div>
-                <div class="rounded-3xl overflow-hidden shadow-lg h-[250px] md:h-auto lg:h-[320px]">
+                <div class="rounded-3xl overflow-hidden shadow-lg h-[250px] xl:h-auto xl:h-[320px]">
                     <img
                         src="{{ asset('assets/Saung-Gor.jpg') }}"
                         class="w-full h-full object-cover object-center"
                         alt="School Life 2"
                     />
                 </div>
-                <div class="bg-[#2a8b41] rounded-3xl p-6 md:p-8 flex flex-col justify-center shadow-lg min-h-[250px] lg:h-[320px]">
+                <div class="bg-[#2a8b41] rounded-3xl p-6 xl:p-8 flex flex-col justify-center shadow-lg min-h-[250px] xl:h-[320px]">
                     <h4 class="text-3xl md:text-4xl font-bold mb-3 leading-tight text-white">
                         Character<br />Development
                     </h4>
