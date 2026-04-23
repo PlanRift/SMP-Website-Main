@@ -1,9 +1,9 @@
 <!-- Main Materials Section -->
-<div class="w-full py-24 relative overflow-hidden flex flex-col md:block" id="materials-container">
+<div class="w-full py-12 relative overflow-hidden flex flex-col md:block" id="materials-container">
     <!-- Header -->
     <div
         id="materials-header"
-        class="px-6 md:px-12 lg:px-24 md:absolute md:left-0 md:top-[45%] lg:top-1/2 md:-translate-y-1/2 z-20 transition-opacity duration-500 w-full md:w-[400px] lg:w-[500px] mb-16 md:mb-0 pointer-events-none"
+        class="px-6 md:px-12 lg:px-24 md:absolute md:left-0 md:top-[45%] lg:top-1/2 md:-translate-y-1/2 z-20 transition-opacity duration-500 w-full md:w-[400px] lg:w-[500px] mb-8 md:mb-0 pointer-events-none"
     >
         <h2 class="text-3xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tight mb-0 montserrat-800 text-gray-900">
             MAIN<br />MATERIALS

@@ -24,9 +24,9 @@
             <!-- Contact Info Box (Positioned on the left side of the right column) -->
             <div class="relative lg:absolute lg:top-1/2 lg:left-0 lg:-translate-y-1/2 z-30 w-full lg:w-auto p-6 md:p-10 lg:p-0">
                 <div class="bg-[#9ec869] text-white p-6 md:p-10 lg:p-12 shadow-2xl relative lg:max-w-[400px]">
-                    <h3 class="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mb-6 opacity-90">HUBUNGI KAMI</h3>
+                    <h3 class="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mb-3 opacity-90">HUBUNGI KAMI</h3>
                     
-                    <div class="space-y-6">
+                    <div class="space-y-3">
                         <!-- Phone -->
                         <div class="flex items-start gap-3">
                             <svg class="w-5 h-5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

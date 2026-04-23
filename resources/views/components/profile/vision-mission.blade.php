@@ -1,5 +1,5 @@
 <!-- Vision & Mission Section -->
-<div class="w-full px-6 md:px-12 lg:px-24 py-12 md:py-24 pt-0 bg-white">
+<div class="w-full px-6 md:px-12 lg:px-24 py-6 md:py-12 pt-0 bg-white">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
         
         <!-- Left Column: Tall Image -->
@@ -15,8 +15,8 @@
 
         <!-- Middle Column: Vision -->
         <div class="lg:col-span-4 flex flex-col">
-            <div class="mb-12">
-                <h2 class="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-8 montserrat-800">
+            <div class="mb-6 text-center md:text-left">
+                <h2 class="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-4 montserrat-800">
                     Vision
                 </h2>
                 <p class="text-lg md:text-xl text-gray-600 leading-relaxed text-left">
@@ -36,7 +36,7 @@
 
         <!-- Right Column: Mission -->
         <div class="lg:col-span-4 flex flex-col">
-            <h2 class="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-8 montserrat-800">
+            <h2 class="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-4 montserrat-800 text-center md:text-left">
                 Mission
             </h2>
             <div class="space-y-6">

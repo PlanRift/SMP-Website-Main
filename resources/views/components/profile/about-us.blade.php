@@ -1,11 +1,11 @@
 <!-- About Us Section -->
-<div id="about-us" class="flex flex-col px-6 md:px-12 lg:px-24 py-16 md:py-24 items-start w-full relative">
-    <div class="w-full relative z-10 flex flex-col md:flex-row gap-12 lg:gap-20 items-center mb-16">
+<div id="about-us" class="flex flex-col px-6 md:px-12 lg:px-24 py-8 md:py-12 items-start w-full relative">
+    <div class="w-full relative z-10 flex flex-col md:flex-row gap-12 lg:gap-20 items-center mb-8">
         <div class="w-full md:w-1/2">
             <h3 class="text-[#00A651] uppercase tracking-[0.2em] font-medium text-xs md:text-sm mb-1">
                 About Us
             </h3>
-            <h2 class="text-3xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tight mb-8 montserrat-800">
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tight mb-4 montserrat-800">
                 SELAMAT DATANG
             </h2>
             <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-medium text-justify">
@@ -34,7 +34,7 @@
     </div>
 
     <!-- 3 Images Carousel -->
-    <div class="relative w-full mb-20 z-10 px-0">
+    <div class="relative w-full mb-10 z-10 px-0">
         <!-- Carousel Container -->
         <div class="overflow-hidden w-full h-[350px] rounded-2xl">
             <div

@@ -1,7 +1,7 @@
 <!-- Blog Sneak Peek Section -->
-<div class="w-full py-16 md:py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden" id="blog-preview-container">
+<div class="w-full py-8 md:py-12 px-6 md:px-12 lg:px-24 relative overflow-hidden" id="blog-preview-container">
     <!-- Header -->
-    <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+    <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
             <h3 class="text-[#00A651] uppercase tracking-[0.2em] font-medium text-xs md:text-sm mb-1">
                 Sneak Peek of our Blogs
@@ -70,7 +70,7 @@
                     @foreach ($blogs_query as $blog)
                         <div class="blog-slide shrink-0 w-[85vw] md:w-[350px] lg:w-[450px] group flex flex-col h-full">
                             <a href="{{ route('blogs.show', $blog->slug) }}" class="block h-full flex flex-col">
-                                <div class="rounded-3xl overflow-hidden h-[300px] lg:h-[400px] mb-6 shadow-md bg-gray-100 relative">
+                                <div class="rounded-3xl overflow-hidden h-[300px] lg:h-[400px] mb-3 shadow-md bg-gray-100 relative">
                                     <img
                                         src="{{ !empty($blog->gallery) ? \Illuminate\Support\Facades\Storage::url($blog->gallery[0]) : asset('assets/School-Close.jpg') }}"
                                         class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out"
@@ -80,7 +80,7 @@
                                 <h4 class="text-2xl md:text-3xl font-bold mb-3 leading-tight montserrat-800 text-gray-900 group-hover:text-[#00A651] transition-colors">
                                     {{ $blog->title }}
                                 </h4>
-                                <p class="text-lg text-gray-600 leading-snug font-medium text-left pr-4 mb-6 line-clamp-3">
+                                <p class="text-lg text-gray-600 leading-snug font-medium text-left pr-4 mb-3 line-clamp-3">
                                     {{ \Illuminate\Support\Str::limit(strip_tags($blog->content), 150) }}
                                 </p>
                                 <div class="mt-auto text-sm font-bold text-[#00A651] uppercase tracking-wider">
@@ -118,7 +118,7 @@
         </div>
 
         <!-- Controls -->
-        <div class="flex gap-4 mt-12">
+        <div class="flex gap-4 mt-6">
             <button
                 id="blog-btn-prev"
                 class="w-14 h-14 flex items-center justify-center border-2 border-gray-200 text-gray-400 rounded-full opacity-50 pointer-events-none transition-all duration-300 hover:border-[#00A651] hover:text-[#00A651] hover:bg-green-50/50 cursor-pointer"

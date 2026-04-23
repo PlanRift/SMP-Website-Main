@@ -3,9 +3,9 @@
     $settings = \App\Models\Setting::first();
 @endphp
 
-<footer class="bg-[#1a1a1a] text-white pt-20 pb-10 px-6 md:px-12 xl:px-24 montserrat-500">
+<footer class="bg-[#1a1a1a] text-white pt-10 pb-5 px-6 md:px-12 xl:px-24 montserrat-500">
     <div class="max-w-[1440px] mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-10">
             <!-- Brand Column -->
             <div class="space-y-6">
                 <div class="flex items-center gap-3">
@@ -93,7 +93,7 @@
         </div>
 
         <!-- Bottom Bar -->
-        <div class="pt-10 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="pt-5 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6">
             <p class="text-gray-500 text-xs tracking-wide">
                 &copy; {{ date('Y') }} INSAN TAQWA Islamic School. All rights reserved.
             </p>

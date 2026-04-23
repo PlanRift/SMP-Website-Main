@@ -1,11 +1,11 @@
 <!-- Why Us Section (Dark Background) -->
-<div class="w-full bg-[#312f2c] text-white py-16 md:py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+<div class="w-full bg-[#312f2c] text-white py-8 md:py-12 px-6 md:px-12 lg:px-24 relative overflow-hidden">
     <div class="w-full relative z-10">
         <div>
             <h3 class="text-[#b1b145] uppercase tracking-[0.2em] font-medium text-xs md:text-sm mb-1">
                 Kenapa Pilih Kami?
             </h3>
-            <h2 class="text-3xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tight mb-16 montserrat-800">
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tight mb-8 montserrat-800">
                 WHY CHOOSE US?
             </h2>
         </div>
