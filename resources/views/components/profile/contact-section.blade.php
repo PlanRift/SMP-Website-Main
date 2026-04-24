@@ -13,17 +13,18 @@
             ></iframe>
         </div>
         <!-- Right: School Image & Contact Box -->
-        <div class="w-full lg:w-1/2 h-auto lg:h-full relative overflow-hidden group">
+        <div class="w-full lg:w-1/2 h-[500px] md:h-[600px] lg:h-full relative overflow-hidden group">
             <img 
-                src="{{ asset('assets/School-Close.jpg') }}" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[3000ms]" 
+                src="{{ asset('assets/School-Close.webp') }}" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-3000" 
                 alt="School Building Aerial View"
+                loading="lazy"
             >
             <div class="absolute inset-0 bg-black/20"></div>
 
-            <!-- Contact Info Box (Positioned on the left side of the right column) -->
-            <div class="relative lg:absolute lg:top-1/2 lg:left-0 lg:-translate-y-1/2 z-30 w-full lg:w-auto p-6 md:p-10 lg:p-0">
-                <div class="bg-[#9ec869] text-white p-6 md:p-10 lg:p-12 shadow-2xl relative lg:max-w-[400px]">
+            <!-- Contact Info Box (Positioned in the middle on mobile/tablet, left side on desktop) -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-0 lg:translate-x-0 z-30 w-[90%] md:w-auto p-0">
+                <div class="bg-[#9ec869]/90 lg:bg-[#9ec869] backdrop-blur-sm lg:backdrop-blur-none text-white p-8 md:p-10 lg:p-12 shadow-2xl relative lg:max-w-[400px]">
                     <h3 class="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mb-3 opacity-90">HUBUNGI KAMI</h3>
                     
                     <div class="space-y-3">

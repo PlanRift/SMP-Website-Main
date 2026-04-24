@@ -148,7 +148,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Prev Button & Header
             if (offset > 0) {
-                matHeader.style.opacity = "0";
+                if (window.innerWidth >= 768) {
+                    matHeader.style.opacity = "0";
+                }
                 matPrev.classList.remove("opacity-0", "pointer-events-none");
                 matPrev.classList.add("opacity-100", "pointer-events-auto");
             } else {

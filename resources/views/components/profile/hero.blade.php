@@ -37,9 +37,10 @@
     <!-- Main Hero Image -->
     <div class="w-full h-[500px] md:h-[1100px] rounded-4xl overflow-hidden mb-8">
         <img
-            src="{{ asset('assets/frontPage.png') }}"
+            src="{{ asset('assets/frontPage.webp') }}"
             alt="frontPage"
             class="w-full h-full object-cover object-center"
+            fetchpriority="high"
         />
     </div>
 </div>

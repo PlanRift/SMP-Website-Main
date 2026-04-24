@@ -182,7 +182,7 @@
                     @endphp
 
                     @foreach ($steps as $step)
-                        <div class="group border border-gray-100 rounded-[2rem] overflow-hidden bg-white transition-all duration-300">
+                        <div class="group border border-gray-100 rounded-4xl overflow-hidden bg-white transition-all duration-300">
                             <!-- Accordion Header -->
                             <button 
                                 type="button" 

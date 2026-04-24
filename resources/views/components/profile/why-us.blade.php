@@ -23,7 +23,7 @@
                         disciplined, and God-conscious.
                     </p>
                 </div>
-                <div class="rounded-3xl overflow-hidden shadow-lg xl:col-span-7 h-[250px] xl:h-auto xl:h-[300px]">
+                <div class="rounded-3xl overflow-hidden shadow-lg xl:col-span-7 h-[250px] xl:h-[300px]">
                     <img
                         src="{{ asset('assets/School-Close.jpg') }}"
                         class="w-full h-full object-cover object-center"
@@ -43,7 +43,7 @@
                         family, creating a warm and encouraging atmosphere.
                     </p>
                 </div>
-                <div class="rounded-3xl overflow-hidden shadow-lg h-[250px] xl:h-auto xl:h-[320px]">
+                <div class="rounded-3xl overflow-hidden shadow-lg h-[250px] xl:h-auto">
                     <img
                         src="{{ asset('assets/Saung-Gor.jpg') }}"
                         class="w-full h-full object-cover object-center"

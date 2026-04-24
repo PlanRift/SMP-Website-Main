@@ -26,7 +26,7 @@
             
             <!-- Featured Image -->
             @if($blog->gallery && count($blog->gallery) > 0)
-                <div class="rounded-[2.5rem] overflow-hidden shadow-2xl mb-16 aspect-[16/9]">
+                <div class="rounded-[2.5rem] overflow-hidden shadow-2xl mb-16 aspect-video">
                     <img src="{{ Storage::url($blog->gallery[0]) }}" alt="{{ $blog->title }}" class="w-full h-full object-cover">
                 </div>
             @endif

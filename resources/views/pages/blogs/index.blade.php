@@ -23,7 +23,7 @@
                 <div class="w-full lg:w-1/2 relative h-[400px] lg:h-auto overflow-hidden">
                     <img
                         src="{{ !empty($featured->gallery) ? \Illuminate\Support\Facades\Storage::url($featured->gallery[0]) : asset('assets/School-Close.jpg') }}"
-                        class="w-full h-full object-cover group-hover:scale-105 transition duration-[2000ms] ease-out"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-2000 ease-out"
                         alt="{{ $featured->title }}"
                     />
                     <div class="absolute inset-0 bg-black/10"></div>
@@ -68,7 +68,7 @@
                 @forelse($displayBlogs as $blog)
                     <div class="group flex flex-col h-full">
                         <!-- Image Section -->
-                        <div class="rounded-3xl overflow-hidden aspect-[4/3] mb-8 shadow-xl bg-gray-100 relative shrink-0">
+                        <div class="rounded-3xl overflow-hidden aspect-4/3 mb-8 shadow-xl bg-gray-100 relative shrink-0">
                             <img
                                 src="{{ !empty($blog->gallery) ? \Illuminate\Support\Facades\Storage::url($blog->gallery[0]) : asset('assets/School-Close.jpg') }}"
                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out"

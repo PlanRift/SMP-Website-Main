@@ -25,9 +25,10 @@
         <div class="w-full md:w-1/2 relative">
             <div class="rounded-2xl overflow-hidden h-[350px] md:h-[650px] shadow-2xl relative z-10">
                 <img
-                    src="{{ asset('assets/Masjid-Sky.jpg') }}"
+                    src="{{ asset('assets/Masjid-Sky.webp') }}"
                     class="w-full h-full object-cover object-center"
                     alt="About Us Welcome"
+                    loading="lazy"
                 />
             </div>
         </div>
@@ -43,11 +44,11 @@
             >
                 @php
                     $carouselImages = [
-                        ['src' => 'assets/School-Close.jpg', 'alt' => 'School Scene 1'],
-                        ['src' => 'assets/Saung-Gor.jpg', 'alt' => 'School Scene 2'],
-                        ['src' => 'assets/Masjid-Sky.jpg', 'alt' => 'School Scene 3'],
-                        ['src' => 'assets/Kantin.jpg', 'alt' => 'School Scene 4'],
-                        ['src' => 'assets/Banner-School.jpg', 'alt' => 'School Scene 5'],
+                        ['src' => 'assets/School-Close.webp', 'alt' => 'School Scene 1'],
+                        ['src' => 'assets/Saung-Gor.webp', 'alt' => 'School Scene 2'],
+                        ['src' => 'assets/Masjid-Sky.webp', 'alt' => 'School Scene 3'],
+                        ['src' => 'assets/Kantin.webp', 'alt' => 'School Scene 4'],
+                        ['src' => 'assets/Banner-School.webp', 'alt' => 'School Scene 5'],
                     ];
                 @endphp
 
@@ -57,6 +58,7 @@
                             src="{{ asset($image['src']) }}"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             alt="{{ $image['alt'] }}"
+                            loading="lazy"
                         />
                     </div>
                 @endforeach

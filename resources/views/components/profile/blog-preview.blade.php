@@ -38,28 +38,28 @@
                                 'title' => 'Menanamkan Karakter Qurani di Era Digital',
                                 'date' => '24 Maret 2024',
                                 'desc' => 'Bagaimana SMPIT Insan Taqwa mendidik generasi yang tetap teguh pada nilai-nilai keislaman di tengah gempuran teknologi modern.',
-                                'img' => 'assets/School-Close.jpg',
+                                'img' => 'assets/School-Close.webp',
                                 'is_mock' => true
                             ],
                             [
                                 'title' => 'Serunya Field Trip ke Museum Sejarah',
                                 'date' => '15 Maret 2024',
                                 'desc' => 'Para siswa diajak untuk lebih mengenal sejarah peradaban Islam melalui kunjungan lapangan yang interaktif dan edukatif.',
-                                'img' => 'assets/Saung-Gor.jpg',
+                                'img' => 'assets/Saung-Gor.webp',
                                 'is_mock' => true
                             ],
                             [
                                 'title' => 'Tips Belajar Efektif Menjelang Ujian Akhir',
                                 'date' => '10 Maret 2024',
                                 'desc' => 'Dukungan penuh tim pengajar dalam membantu siswa mencapai hasil akademis terbaik dengan metode belajar yang menyenangkan.',
-                                'img' => 'assets/Masjid-Sky.jpg',
+                                'img' => 'assets/Masjid-Sky.webp',
                                 'is_mock' => true
                             ],
                             [
                                 'title' => 'Prestasi Gemilang Siswa di OSN 2024',
                                 'date' => '05 Maret 2024',
                                 'desc' => 'Bangga! Siswa SMPIT Insan Taqwa berhasil membawa pulang medali emas dalam Olimpiade Sains Nasional tingkat daerah.',
-                                'img' => 'assets/Kantin.jpg',
+                                'img' => 'assets/Kantin.webp',
                                 'is_mock' => true
                             ],
                         ];
@@ -69,12 +69,13 @@
                 @if (!$usingMock)
                     @foreach ($blogs_query as $blog)
                         <div class="blog-slide shrink-0 w-[85vw] md:w-[350px] lg:w-[450px] group flex flex-col h-full">
-                            <a href="{{ route('blogs.show', $blog->slug) }}" class="block h-full flex flex-col">
+                            <a href="{{ route('blogs.show', $blog->slug) }}" class="h-full flex flex-col">
                                 <div class="rounded-3xl overflow-hidden h-[300px] lg:h-[400px] mb-3 shadow-md bg-gray-100 relative">
                                     <img
-                                        src="{{ !empty($blog->gallery) ? \Illuminate\Support\Facades\Storage::url($blog->gallery[0]) : asset('assets/School-Close.jpg') }}"
+                                        src="{{ !empty($blog->gallery) ? str_replace(['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG'], '.webp', \Illuminate\Support\Facades\Storage::url($blog->gallery[0])) : asset('assets/School-Close.webp') }}"
                                         class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out"
                                         alt="{{ $blog->title }}"
+                                        loading="lazy"
                                     />
                                 </div>
                                 <h4 class="text-2xl md:text-3xl font-bold mb-3 leading-tight montserrat-800 text-gray-900 group-hover:text-[#00A651] transition-colors">
@@ -97,6 +98,7 @@
                                     src="{{ asset($blog['img']) }}"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out"
                                     alt="{{ $blog['title'] }}"
+                                    loading="lazy"
                                 />
                                 <div class="absolute top-4 right-4 bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">
                                     Sample
