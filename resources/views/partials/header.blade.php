@@ -39,11 +39,20 @@
                 <a href="{{ route('pendaftaran') }}" class="bg-[#16A34A] text-white px-4 py-2 rounded text-sm font-bold montserrat-700">
                     Daftar
                 </a>
-                <button type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none" aria-label="toggle menu">
+                <button id="mobile-menu-btn" type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none" aria-label="toggle menu">
                     <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
                         <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
                     </svg>
                 </button>
+            </div>
+        </div>
+
+        {{-- Mobile Menu Content --}}
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 pb-4 pt-2">
+            <div class="flex flex-col gap-4 px-2">
+                <a href="{{ route('home') }}#page-top" class="text-gray-700 hover:text-green-600 font-semibold py-2 transition-colors montserrat-600 mobile-nav-link">Home</a>
+                <a href="{{ route('home') }}#about-us" class="text-gray-700 hover:text-green-600 font-semibold py-2 transition-colors montserrat-600 mobile-nav-link">About Us</a>
+                <a href="{{ route('blogs.index') }}" class="text-gray-700 hover:text-green-600 font-semibold py-2 transition-colors montserrat-600 mobile-nav-link">Blogs</a>
             </div>
         </div>
     </div>
